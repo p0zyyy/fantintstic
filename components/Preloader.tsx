@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/lib/hooks";
+import Wordmark from "./Wordmark";
 
 /**
  * Animated page-load intro: a fast 0 → 100 counter over a black curtain,
@@ -81,7 +82,7 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="text-2xl font-black tracking-crush">PEEL®</span>
+            <Wordmark className="text-2xl font-black tracking-crush" />
             <span className="text-xs uppercase tracking-[0.3em] text-ash">
               Tint on your terms
             </span>

@@ -19,7 +19,7 @@ import { MaskedText } from "./Reveal";
  *   • top layer   = TINTED glass (darkened + scrim), clipped to the slider
  *
  * Dragging the handle (mouse, touch or keyboard arrows) wipes between the
- * two states, letting the user literally "snap on / peel off" the tint.
+ * two states, letting the user literally "stick on / peel off" the tint.
  * The divider position is a single 0–100 value so it's fully controllable
  * and accessible (exposed as an ARIA slider).
  */
@@ -99,7 +99,7 @@ export default function AttachDetachDemo() {
             <MaskedText text="decide." as="span" className="text-ash" />
           </h2>
           <p className="max-w-sm text-lg text-mist">
-            One panel. Two realities. Pull the handle to snap the tint on —
+            One panel. Two realities. Pull the handle to bring the tint on —
             push it back to peel it clean off. That control is yours, every
             single day.
           </p>
@@ -127,6 +127,8 @@ export default function AttachDetachDemo() {
           <span className="absolute bottom-5 right-5 z-10 rounded-full border border-paper/40 bg-ink/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
             Clear · Peeled off
           </span>
+          {/* TODO: optional — overlay a subtle graphic of the 3M top tabs here
+              to make the holding mechanism explicit in the demo. */}
 
           {/* TOP layer — TINTED glass, clipped to the slider % */}
           <div
@@ -135,7 +137,7 @@ export default function AttachDetachDemo() {
           >
             <Image
               src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop"
-              alt="The same window with detachable tint snapped on"
+              alt="The same window with detachable tint attached"
               fill
               sizes="(max-width: 768px) 100vw, 90vw"
               className="object-cover grayscale brightness-[0.28] contrast-125"
@@ -144,7 +146,7 @@ export default function AttachDetachDemo() {
             {/* extra scrim sells the privacy/darkness of the tint */}
             <div className="absolute inset-0 bg-ink/40" />
             <span className="absolute bottom-5 left-5 rounded-full border border-paper/20 bg-paper/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-paper backdrop-blur-sm">
-              Tinted · Snapped on
+              Tinted · Tabbed on
             </span>
           </div>
 

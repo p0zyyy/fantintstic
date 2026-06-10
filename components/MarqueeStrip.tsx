@@ -11,7 +11,7 @@ export default function MarqueeStrip() {
     <section className="border-y border-graphite bg-ink py-8">
       <Marquee
         items={[
-          "Snap on",
+          "Stick on",
           "Peel off",
           "Tint on your terms",
           "Privacy on demand",

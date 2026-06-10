@@ -5,7 +5,7 @@ import Reveal, { MaskedText } from "./Reveal";
 /**
  * Specs / comparison — a split layout. Left: hard product specs. Right: a
  * head-to-head comparison vs traditional bonded tint, rendered as a clean
- * monochrome table where PEEL wins are bold/filled and the legacy column is
+ * monochrome table where Fantintstic wins are bold/filled and the legacy column is
  * muted. Mobile collapses the table into stacked rows.
  */
 
@@ -14,7 +14,8 @@ const SPECS = [
   { label: "UV block", value: "99.9%" },
   { label: "Install time", value: "≈ 90 sec / window" },
   { label: "Reuses", value: "Unlimited" },
-  { label: "Adhesive", value: "None" },
+  { label: "Mounting", value: "3M top tabs" },
+  { label: "Residue", value: "None" },
   { label: "Shade options", value: "5% – 50% VLT" },
 ];
 
@@ -89,8 +90,8 @@ export default function Specs() {
                 <div className="p-5 text-xs uppercase tracking-widest text-ash">
                   vs. Traditional
                 </div>
-                <div className="bg-paper p-5 text-center text-sm font-black uppercase tracking-wider text-ink">
-                  PEEL
+                <div className="bg-paper p-5 text-center text-sm font-black uppercase tracking-tight text-ink">
+                  Fantintstic
                 </div>
                 <div className="p-5 text-center text-sm font-bold uppercase tracking-wider text-ash">
                   Bonded

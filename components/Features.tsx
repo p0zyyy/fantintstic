@@ -94,7 +94,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: "Residue-free",
-    body: "No glue. No sticky haze. No razor blades. Glass stays factory-clean underneath.",
+    body: "Held by a few removable 3M tabs up top — no glue across the glass, no sticky haze, no razor blades. Factory-clean underneath.",
     icon: icon(
       <>
         <path d="M20 6 9 17l-5-5" />

@@ -1,8 +1,10 @@
-# PEEL® — Detachable Car Window Tint (marketing site)
+# Fantintstic® — Detachable Car Window Tint (marketing site)
 
 An Awwwards-style, **strictly black & white** single-page marketing site for a
-reusable, removable car window tint. The whole experience sells one idea:
-**tint on your terms — snap on, peel off.**
+reusable, removable car window tint. The film is held by a few discreet 3M
+tabs along the top edge of the glass — so it sticks on flat, peels off clean,
+and leaves zero residue. The whole experience sells one idea:
+**tint on your terms — stick on, peel off.**
 
 Built with Next.js (App Router) + TypeScript, Tailwind, Framer Motion and
 Lenis smooth scrolling.
@@ -79,7 +81,8 @@ Search the repo for `TODO` to find every swap point:
 - `components/Hero.tsx` — hero photography
 - `components/AttachDetachDemo.tsx` — the clear/tinted window photo (uses one
   image with a brightness filter for the "tinted" layer; swap for a real
-  clear vs. tinted pair if you have them)
+  clear vs. tinted pair if you have them). There's also a `TODO` to overlay a
+  graphic of the 3M top tabs to make the holding mechanism explicit.
 - `components/Gallery.tsx` — lifestyle gallery shots
 - `components/Specs.tsx` — replace representative figures with certified lab data
 - `app/layout.tsx` — set `metadataBase` to your production domain

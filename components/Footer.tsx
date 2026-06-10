@@ -1,6 +1,7 @@
 "use client";
 
 import Marquee from "./Marquee";
+import Wordmark from "./Wordmark";
 
 /**
  * Footer — wordmark, link columns, socials and fine print. A final marquee
@@ -21,9 +22,7 @@ export default function Footer() {
         {/* Top: wordmark + tagline / link columns */}
         <div className="grid grid-cols-1 gap-12 border-b border-graphite pb-16 lg:grid-cols-[1.5fr_2fr]">
           <div>
-            <span className="text-4xl font-black tracking-crush md:text-5xl">
-              PEEL<span className="text-ash">®</span>
-            </span>
+            <Wordmark className="text-4xl font-black tracking-crush md:text-5xl" />
             <p className="mt-4 max-w-xs text-mist">
               Reusable, removable car window tint. Tint on your terms.
             </p>
@@ -72,7 +71,9 @@ export default function Footer() {
 
         {/* Fine print */}
         <div className="flex flex-col items-start justify-between gap-4 py-8 text-xs uppercase tracking-wider text-ash md:flex-row md:items-center">
-          <span>© {new Date().getFullYear()} PEEL Inc. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} Fantintstic Inc. All rights reserved.
+          </span>
           <div className="flex gap-6">
             <a href="#" data-cursor="" className="hover:text-paper">
               Privacy
@@ -90,7 +91,11 @@ export default function Footer() {
 
       {/* Signature marquee */}
       <div className="border-t border-graphite py-6 opacity-40">
-        <Marquee items={["PEEL", "Tint on your terms"]} duration={40} separator="·" />
+        <Marquee
+          items={["Fantintstic", "Tint on your terms"]}
+          duration={40}
+          separator="·"
+        />
       </div>
     </footer>
   );

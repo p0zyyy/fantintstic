@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
+import Wordmark from "./Wordmark";
 
 const LINKS = [
   { label: "How it works", href: "#how" },
@@ -57,9 +58,9 @@ export default function Navbar() {
           onClick={() => scrollTo("#hero")}
           data-cursor=""
           className="text-xl font-black tracking-crush md:text-2xl"
-          aria-label="PEEL — back to top"
+          aria-label="Fantintstic — back to top"
         >
-          PEEL<span className="text-ash">®</span>
+          <Wordmark />
         </button>
 
         {/* Desktop links */}

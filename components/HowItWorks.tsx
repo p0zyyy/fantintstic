@@ -13,13 +13,13 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "Snap on",
-    body: "Press the magnetic edge trim into place. The film clings flat and bubble-free in one smooth motion. Seconds, not hours.",
+    title: "Stick on",
+    body: "Press the discreet 3M tabs along the top edge of the glass and smooth the panel down. They hold the film flat and bubble-free in one motion. Seconds, not hours.",
   },
   {
     n: "03",
     title: "Peel off",
-    body: "Heading through a checkpoint, selling the car, or just want clarity? Peel it away clean. No adhesive, no haze, no residue.",
+    body: "Heading through a checkpoint, selling the car, or just want clarity? Lift the tabs and the whole panel peels away clean — no tools, no haze, zero residue.",
   },
 ];
 

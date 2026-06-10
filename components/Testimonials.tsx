@@ -9,7 +9,7 @@ import Reveal, { MaskedText } from "./Reveal";
 const QUOTES = [
   {
     quote:
-      "I peel it off for my morning inspection route and snap it back on by lunch. It's the first tint that actually fits my life.",
+      "I peel it off for my morning inspection route and stick it back on by lunch. It's the first tint that actually fits my life.",
     name: "Mara V.",
     role: "Rideshare driver, Austin",
   },

@@ -12,7 +12,11 @@ import { MaskedText } from "./Reveal";
 const FAQS = [
   {
     q: "Does it really leave zero residue?",
-    a: "Correct. PEEL uses a static-cling optical layer and a magnetic edge trim — there is no adhesive touching your glass at any point. Remove it after a day or a decade and the window is exactly as it was.",
+    a: "Yes. Each panel hangs from a few small 3M tabs along the very top of the window — the same residue-free adhesive 3M makes for removable wall mounts. The tabs hold the tint in place, then lift away clean, and the film itself never bonds to the glass. Remove it after a day or a decade and the window is exactly as it was.",
+  },
+  {
+    q: "How does it stay on the window?",
+    a: "Small 3M tabs along the top edge of the glass carry the weight of the panel, so it sits flush and taut without any adhesive across the film. There's nothing to bubble, nothing to cure, and nothing holding on except a few removable tabs you can lift at will.",
   },
   {
     q: "Will it fit my car?",
@@ -20,7 +24,7 @@ const FAQS = [
   },
   {
     q: "Is detachable tint legal?",
-    a: "That's the entire point. Laws vary by region and change often. Because PEEL comes off in seconds, you can run darker tint when it's allowed and peel down to legal — or fully clear — for inspections and checkpoints.",
+    a: "That's the entire point. Laws vary by region and change often. Because Fantintstic comes off in seconds, you can run darker tint when it's allowed and peel down to legal — or fully clear — for inspections and checkpoints.",
   },
   {
     q: "How long does it last?",

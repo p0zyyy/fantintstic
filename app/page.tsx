@@ -15,7 +15,7 @@ import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
 
 /**
- * Single-page landing experience for PEEL — detachable car window tint.
+ * Single-page landing experience for Fantintstic — detachable car window tint.
  *
  * Global behaviours (preloader, smooth scroll, custom cursor) wrap the page;
  * each marketing section is its own self-contained component, composed in

@@ -8,7 +8,7 @@ import { usePrefersReducedMotion } from "@/lib/hooks";
 
 /**
  * Big closing CTA — enormous type that fills the viewport, a single magnetic
- * button, and a faint parallax word ("PEEL") drifting behind for depth.
+ * button, and a faint parallax word ("Fantintstic") drifting behind for depth.
  */
 export default function ClosingCTA() {
   const ref = useRef<HTMLElement>(null);
@@ -26,13 +26,14 @@ export default function ClosingCTA() {
       ref={ref}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-paper px-[5vw] py-[14vh] text-ink"
     >
-      {/* Ghost word drifting behind */}
+      {/* Ghost word drifting behind. The brand name is long, so it's sized
+          to bleed past the viewport edges — an intentional oversized motif. */}
       <motion.span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center text-[40vw] font-black leading-none tracking-crush text-mist"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap text-[19vw] font-black leading-none tracking-crush text-mist"
         style={prefersReducedMotion ? undefined : { x: ghostX }}
       >
-        PEEL
+        Fantintstic
       </motion.span>
 
       <div className="relative z-10 flex flex-col items-center text-center">
@@ -41,7 +42,7 @@ export default function ClosingCTA() {
         </p>
 
         <h2 className="display text-[16vw] leading-[0.82] tracking-crush md:text-[12vw]">
-          <MaskedText text="Snap on." as="span" />
+          <MaskedText text="Stick on." as="span" />
           <br />
           <MaskedText text="Peel off." as="span" className="text-ash" />
         </h2>

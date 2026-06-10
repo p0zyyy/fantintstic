@@ -91,8 +91,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.5 }}
             className="max-w-md text-lg font-normal leading-relaxed text-mist md:text-xl"
           >
-            Snap on privacy, heat and glare control whenever you want it.
-            Peel it off in seconds — no adhesive, no residue, no regret.
+            Stick on privacy, heat and glare control whenever you want it.
+            Peel it off in seconds — zero residue, no regret.
           </motion.p>
 
           <motion.div
