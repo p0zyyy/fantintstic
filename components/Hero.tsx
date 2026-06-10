@@ -1,0 +1,146 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { MaskedText } from "./Reveal";
+import MagneticButton from "./MagneticButton";
+import { usePrefersReducedMotion } from "@/lib/hooks";
+
+/**
+ * Hero — oversized clamp-scaled headline ("TINT ON YOUR TERMS"), a one-line
+ * subhead, primary CTA and a scroll indicator. A full-bleed grayscale car
+ * image sits behind with a subtle scroll parallax + dark gradient for
+ * legibility.
+ */
+export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  // Background drifts down slightly + headline rises as you scroll away.
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  return (
+    <section
+      id="hero"
+      ref={ref}
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
+    >
+      {/* Full-bleed background image with parallax */}
+      <motion.div
+        className="absolute inset-0 -z-10"
+        style={
+          prefersReducedMotion ? undefined : { y: bgY, scale: bgScale }
+        }
+      >
+        {/* TODO: replace with owned hero photography (car at dusk, side glass). */}
+        <Image
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
+          alt="Sports car profile with deeply tinted side windows"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover grayscale"
+        />
+        {/* Gradient scrims keep the white type readable over any image. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 to-transparent" />
+      </motion.div>
+
+      {/* Hero content */}
+      <motion.div
+        className="relative z-10 px-[5vw] pb-[12vh] pt-[28vh]"
+        style={
+          prefersReducedMotion
+            ? undefined
+            : { y: contentY, opacity: contentOpacity }
+        }
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          className="mb-6 max-w-md text-sm font-medium uppercase tracking-[0.3em] text-mist"
+        >
+          Reusable · Removable · Residue-free
+        </motion.p>
+
+        <h1 className="display text-[15vw] leading-[0.82] tracking-crush md:text-[12vw]">
+          <MaskedText text="Tint on" delay={1.9} as="span" />
+          <br />
+          <MaskedText
+            text="your terms."
+            delay={2.05}
+            as="span"
+            className="text-ash"
+          />
+        </h1>
+
+        <div className="mt-10 flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.5 }}
+            className="max-w-md text-lg font-normal leading-relaxed text-mist md:text-xl"
+          >
+            Snap on privacy, heat and glare control whenever you want it.
+            Peel it off in seconds — no adhesive, no residue, no regret.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.65 }}
+          >
+            <MagneticButton
+              onClick={() =>
+                window.dispatchEvent(
+                  new CustomEvent("lenis:scroll-to", { detail: "#cta" })
+                )
+              }
+              cursorLabel="Buy"
+              strength={0.5}
+              className="rounded-full bg-paper px-10 py-5 text-base font-bold uppercase tracking-wider text-ink"
+            >
+              Get Yours →
+            </MagneticButton>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 3 }}
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
+        aria-hidden="true"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-ash">
+            Scroll
+          </span>
+          <div className="relative h-12 w-px overflow-hidden bg-graphite">
+            <motion.div
+              className="absolute inset-x-0 top-0 h-1/2 bg-paper"
+              animate={{ y: ["-100%", "200%"] }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}

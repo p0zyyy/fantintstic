@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #ffffff;
+  --ink: #000000;
+  /* Custom cursor sizing — read by CustomCursor.tsx */
+  --cursor-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Lenis drives scrolling; keep native smooth-scroll off so the two
+     don't fight. Lenis adds the `lenis` class to <html> when active. */
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hide the OS cursor only on devices that actually have the custom one
+   (pointer-capable, non-touch). Touch devices keep native behaviour. */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Selection stays monochrome. */
+::selection {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Thin mono scrollbar (non-Lenis fallback / horizontal regions). */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* ----------------------------------------------------------------------
+   Reusable utility: clip/mask reveal lines used by the Reveal component.
+   The child translates up from behind an overflow-hidden mask.
+   ---------------------------------------------------------------------- */
+.reveal-mask {
+  overflow: hidden;
+  display: block;
+}
+
+/* Respect users who ask for less motion: neutralise transforms/animations.
+   Components ALSO gate their JS animations via the usePrefersReducedMotion
+   hook; this is the CSS safety net. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus styling — visible mono ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Big display headline helper — clamp-scaled, tight tracking. */
+.display {
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
