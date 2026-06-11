@@ -99,9 +99,9 @@ export default function AttachDetachDemo() {
             <MaskedText text="decide." as="span" className="text-ash" />
           </h2>
           <p className="max-w-sm text-lg text-mist">
-            One panel. Two realities. Pull the handle to bring the tint on —
-            push it back to peel it clean off. That control is yours, every
-            single day.
+            One panel. Two realities. Pull the handle to bring the tint on,
+            then push it back to peel it clean off. That control is yours,
+            every single day.
           </p>
         </div>
 

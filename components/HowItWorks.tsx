@@ -9,7 +9,7 @@ const STEPS = [
   {
     n: "01",
     title: "Align",
-    body: "Hold the pre-cut panel to your window. Custom-shaped for your exact make and model — it just lines up.",
+    body: "Hold the pre-cut panel to your window. Custom-shaped for your exact make and model, it lines up on its own.",
   },
   {
     n: "02",
@@ -19,7 +19,7 @@ const STEPS = [
   {
     n: "03",
     title: "Peel off",
-    body: "Heading through a checkpoint, selling the car, or just want clarity? Lift the tabs and the whole panel peels away clean — no tools, no haze, zero residue.",
+    body: "Heading through a checkpoint, selling the car, or just want clarity? Lift the tabs and the whole panel peels away clean. No tools, no haze, zero residue.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function HowItWorks() {
           </h2>
           <p className="mt-8 max-w-sm text-lg text-mist">
             No installers. No heat guns. No appointments. The whole system is
-            built to go on — and come off — by you, in your driveway.
+            built to go on and come off by you, right in your driveway.
           </p>
         </div>
 

@@ -39,7 +39,7 @@ const icon = (path: ReactNode) => (
 const FEATURES: Feature[] = [
   {
     title: "Heat reduction",
-    body: "Rejects up to 99% of infrared heat. Step into a cabin that hasn't turned into an oven — and ask less of your A/C.",
+    body: "Rejects up to 99% of infrared heat. Step into a cabin that hasn't turned into an oven, so you can ask less of your A/C.",
     icon: icon(
       <>
         <circle cx="12" cy="12" r="4" />
@@ -94,7 +94,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: "Residue-free",
-    body: "Held by a few removable 3M tabs up top — no glue across the glass, no sticky haze, no razor blades. Factory-clean underneath.",
+    body: "Held by a few removable 3M tabs up top. No glue across the glass, no sticky haze, no razor blades. Factory-clean underneath.",
     icon: icon(
       <>
         <path d="M20 6 9 17l-5-5" />
@@ -129,7 +129,7 @@ export default function Features() {
           </h2>
           <Reveal variant="rise" className="max-w-sm text-lg text-mist">
             <p>
-              All the protection of premium tint — minus the permanence, the
+              All the protection of premium tint, minus the permanence, the
               installer fees, and the regret. Seven reasons it lives in your
               car.
             </p>

@@ -41,10 +41,10 @@ export default function Hero() {
           prefersReducedMotion ? undefined : { y: bgY, scale: bgScale }
         }
       >
-        {/* TODO: replace with owned hero photography (car at dusk, side glass). */}
+        {/* TODO: replace with owned hero photography (luxury sedan, side glass). */}
         <Image
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
-          alt="Sports car profile with deeply tinted side windows"
+          src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?q=80&w=2070&auto=format&fit=crop"
+          alt="Direct side profile of a black luxury sedan with tinted windows"
           fill
           priority
           sizes="100vw"
@@ -91,8 +91,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.5 }}
             className="max-w-md text-lg font-normal leading-relaxed text-mist md:text-xl"
           >
-            Stick on privacy, heat and glare control whenever you want it.
-            Peel it off in seconds — zero residue, no regret.
+            Premium nano-ceramic tint that blocks 99% of UV and up to 98% of
+            infrared heat, yet peels off effortlessly clean whenever you
+            choose.
           </motion.p>
 
           <motion.div

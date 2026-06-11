@@ -58,7 +58,7 @@ export default function Navbar() {
           onClick={() => scrollTo("#hero")}
           data-cursor=""
           className="text-xl font-black tracking-crush md:text-2xl"
-          aria-label="Fantintstic — back to top"
+          aria-label="Fantintstic, back to top"
         >
           <Wordmark />
         </button>

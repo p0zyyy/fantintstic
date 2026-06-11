@@ -17,9 +17,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"), // TODO: set production domain
-  title: "Fantintstic — Tint On Your Terms | Detachable Car Window Tint",
+  title: "Fantintstic: Tint On Your Terms | Detachable Car Window Tint",
   description:
-    "The reusable, removable car window tint. Held by discreet 3M tabs at the top of the glass — stick it on for privacy, heat and glare control, peel it off anytime with zero residue. Tint on your terms.",
+    "The reusable, removable car window tint. Held by discreet 3M tabs at the top of the glass, it sticks on for privacy, heat and glare control, then peels off anytime with zero residue. Tint on your terms.",
   keywords: [
     "detachable car tint",
     "removable window tint",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "privacy tint",
   ],
   openGraph: {
-    title: "Fantintstic — Tint On Your Terms",
+    title: "Fantintstic: Tint On Your Terms",
     description:
       "Reusable, removable car window tint. Stick on. Peel off. Zero residue.",
     type: "website",

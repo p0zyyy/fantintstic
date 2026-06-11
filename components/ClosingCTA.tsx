@@ -48,7 +48,7 @@ export default function ClosingCTA() {
         </h2>
 
         <p className="mt-10 max-w-md text-lg text-graphite">
-          Get the tint that answers to you — not the other way around. Free
+          Get the tint that answers to you, not the other way around. Free
           shipping, 30-day peel-it-and-see guarantee.
         </p>
 
