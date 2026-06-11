@@ -10,21 +10,14 @@ export default function MarqueeStrip() {
   return (
     <section className="border-y border-graphite bg-ink py-8">
       <Marquee
-        items={[
-          "Stick on",
-          "Peel off",
-          "Tint on your terms",
-          "Privacy on demand",
-        ]}
+        items={["99% UVR", "95+% IRR", "100% Reusable"]}
         duration={28}
       />
       <div className="h-4" />
       <Marquee
         items={[
-          "Zero residue",
-          "100% reusable",
-          "Legal flexibility",
-          "Heat · Glare · Privacy",
+          "30-Days Money-Back Guarantee",
+          "Free Shipping & Professional Installation in 48 Hrs",
         ]}
         duration={34}
         reverse

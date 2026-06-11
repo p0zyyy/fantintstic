@@ -14,7 +14,12 @@ const config: Config = {
         // Grays reserved purely for depth / contrast.
         coal: "#111111",
         graphite: "#1a1a1a",
-        ash: "#888888",
+        // `steel` — muted mid-gray for large decorative numerals on dark.
+        steel: "#4d4d4d",
+        // `ash` is the secondary-text gray. Lifted from #888 so it stays
+        // clearly legible on the black base (~9:1 contrast) while still
+        // reading as secondary to the white/mist primary text.
+        ash: "#b3b3b3",
         mist: "#e5e5e5",
       },
       fontFamily: {

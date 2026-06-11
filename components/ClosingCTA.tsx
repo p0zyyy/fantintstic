@@ -37,14 +37,14 @@ export default function ClosingCTA() {
       </motion.span>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <p className="mb-8 text-sm font-medium uppercase tracking-[0.3em] text-ash">
+        <p className="mb-8 text-sm font-medium uppercase tracking-[0.3em] text-steel">
           Ready when you are
         </p>
 
         <h2 className="display text-[16vw] leading-[0.82] tracking-crush md:text-[12vw]">
           <MaskedText text="Stick on." as="span" />
           <br />
-          <MaskedText text="Peel off." as="span" className="text-ash" />
+          <MaskedText text="Peel off." as="span" className="text-steel" />
         </h2>
 
         <p className="mt-10 max-w-md text-lg text-graphite">

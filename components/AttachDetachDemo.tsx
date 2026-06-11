@@ -115,17 +115,17 @@ export default function AttachDetachDemo() {
           onPointerCancel={onPointerUp}
         >
           {/* BASE layer — CLEAR glass */}
-          {/* TODO: swap for owned photo of car interior through clear glass. */}
+          {/* TODO: swap for owned photo of a car seen through clear glass. */}
           <Image
             src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop"
-            alt="View through a clear, untinted car window"
+            alt="A car seen through clear, untinted glass"
             fill
             sizes="(max-width: 768px) 100vw, 90vw"
             className="object-cover grayscale"
             draggable={false}
           />
           <span className="absolute bottom-5 right-5 z-10 rounded-full border border-paper/40 bg-ink/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
-            Clear · Peeled off
+            Tint off
           </span>
           {/* TODO: optional — overlay a subtle graphic of the 3M top tabs here
               to make the holding mechanism explicit in the demo. */}
@@ -137,7 +137,7 @@ export default function AttachDetachDemo() {
           >
             <Image
               src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop"
-              alt="The same window with detachable tint attached"
+              alt="The same car with detachable tint on, cutting glare and heat"
               fill
               sizes="(max-width: 768px) 100vw, 90vw"
               className="object-cover grayscale brightness-[0.28] contrast-125"
@@ -145,8 +145,8 @@ export default function AttachDetachDemo() {
             />
             {/* extra scrim sells the privacy/darkness of the tint */}
             <div className="absolute inset-0 bg-ink/40" />
-            <span className="absolute bottom-5 left-5 rounded-full border border-paper/20 bg-paper/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-paper backdrop-blur-sm">
-              Tinted · Tabbed on
+            <span className="absolute bottom-5 left-5 rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ink backdrop-blur-sm">
+              Tint on
             </span>
           </div>
 

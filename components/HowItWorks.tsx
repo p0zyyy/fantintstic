@@ -115,7 +115,7 @@ function Step({
       className="min-h-[55vh] pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
-      <span className="block text-[18vw] font-black leading-none tracking-crush text-graphite lg:text-[10vw]">
+      <span className="block text-[18vw] font-black leading-none tracking-crush text-steel lg:text-[10vw]">
         {step.n}
       </span>
       <h3 className="mt-2 text-5xl font-black tracking-tightest lg:text-7xl">

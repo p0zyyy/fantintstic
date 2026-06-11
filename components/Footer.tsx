@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
 
       {/* Signature marquee */}
-      <div className="border-t border-graphite py-6 opacity-40">
+      <div className="border-t border-graphite py-6 opacity-60">
         <Marquee
           items={["Fantintstic", "Tint on your terms"]}
           duration={40}
