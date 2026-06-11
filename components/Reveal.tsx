@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
-import { motion, Variants } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
 import { usePrefersReducedMotion } from "@/lib/hooks";
 
 type RevealVariant = "rise" | "fade" | "mask";
@@ -102,6 +102,13 @@ export function MaskedText({
   const prefersReducedMotion = usePrefersReducedMotion();
   const Tag = as;
 
+  // Observe the STABLE container (not the translated word spans). Each word's
+  // inner span starts shifted 110% down, so observing it directly makes the
+  // intersection threshold unreliable — the reveal would never fire. Watching
+  // the container, whose box never moves, triggers the animation dependably.
+  const ref = useRef<HTMLElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.4 });
+
   if (prefersReducedMotion) {
     return <Tag className={className}>{text}</Tag>;
   }
@@ -109,7 +116,7 @@ export function MaskedText({
   const words = text.split(" ");
 
   return (
-    <Tag className={className} aria-label={text}>
+    <Tag ref={ref} className={className} aria-label={text}>
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
@@ -119,8 +126,7 @@ export function MaskedText({
           <motion.span
             className="inline-block"
             initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, amount: 0.6 }}
+            animate={inView ? { y: "0%" } : { y: "110%" }}
             transition={{
               duration: 0.9,
               delay: delay + i * stagger,

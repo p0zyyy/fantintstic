@@ -79,8 +79,11 @@ body {
    The child translates up from behind an overflow-hidden mask.
    ---------------------------------------------------------------------- */
 .reveal-mask {
+  /* inline-block so masked WORDS flow along the line; only the explicit <br>
+     between MaskedText groups breaks lines. (A `display: block` here would
+     force every word onto its own line, creating large uneven gaps.) */
   overflow: hidden;
-  display: block;
+  display: inline-block;
 }
 
 /* Respect users who ask for less motion: neutralise transforms/animations.

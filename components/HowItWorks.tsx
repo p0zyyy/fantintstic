@@ -45,7 +45,7 @@ export default function HowItWorks() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-0 lg:grid-cols-2">
         {/* Sticky left column */}
         <div className="top-0 flex h-[60vh] flex-col justify-center px-[5vw] py-16 lg:sticky lg:h-screen">
-          <span className="mb-6 text-sm font-medium uppercase tracking-[0.3em] text-ash">
+          <span className="mb-6 text-[1.3125rem] font-medium uppercase tracking-[0.3em] text-ash">
             (How it works)
           </span>
           <h2 className="display text-[14vw] leading-[0.85] tracking-crush lg:text-[7vw]">
@@ -59,8 +59,11 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Scrolling steps */}
-        <div className="relative flex flex-col px-[5vw] py-16 lg:py-[20vh]">
+        {/* Scrolling steps. A fixed flex `gap` keeps the spacing between every
+            step identical regardless of how long each step's body copy is
+            (content-sized steps, not fixed-height blocks with variable
+            trailing space). */}
+        <div className="relative flex flex-col gap-[16vh] px-[5vw] py-16 lg:py-[20vh]">
           {/* Vertical progress rail */}
           <div className="absolute left-[5vw] top-0 hidden h-full w-px bg-graphite lg:block">
             <motion.div
@@ -112,7 +115,7 @@ function Step({
 
   return (
     <motion.div
-      className="min-h-[55vh] pl-0 lg:pl-[8vw]"
+      className="pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
       <span className="block text-[18vw] font-black leading-none tracking-crush text-steel lg:text-[10vw]">

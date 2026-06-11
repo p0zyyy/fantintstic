@@ -32,11 +32,15 @@ export default function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-x-clip"
     >
-      {/* Full-bleed background image with parallax */}
+      {/* Full-bleed background image with parallax.
+          The layer bleeds ~10rem below the hero so the image continues behind
+          the marquee strip below it (which is transparent). `object-top` keeps
+          the car anchored to the top, so the extra height reveals more of the
+          image downward rather than zooming/scaling the car. */}
       <motion.div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-x-0 top-0 -z-10 h-[calc(100%+10rem)]"
         style={
           prefersReducedMotion ? undefined : { y: bgY, scale: bgScale }
         }
@@ -48,10 +52,11 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover grayscale"
+          className="object-cover object-top grayscale"
         />
-        {/* Gradient scrims keep the white type readable over any image. */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/60" />
+        {/* Gradient scrims keep the white type readable over the image while
+            still letting it show (faintly) behind the marquee at the bottom. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/55" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/70 to-transparent" />
       </motion.div>
 

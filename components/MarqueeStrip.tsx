@@ -8,7 +8,7 @@ import Marquee from "./Marquee";
  */
 export default function MarqueeStrip() {
   return (
-    <section className="border-y border-graphite bg-ink py-8">
+    <section className="relative z-0 border-y border-graphite/30 bg-transparent py-8">
       <Marquee
         items={["99% UVR", "95+% IRR", "100% Reusable"]}
         duration={28}
