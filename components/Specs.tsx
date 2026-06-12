@@ -10,47 +10,24 @@ import Reveal, { MaskedText } from "./Reveal";
  */
 
 const SPECS = [
+  { label: "UV block", value: "99%" },
   { label: "Heat (IR) rejection", value: "Up to 99%" },
-  { label: "UV block", value: "99.9%" },
-  { label: "Install time", value: "≈ 90 sec / window" },
+  { label: "Install time", value: "2 mins / window" },
   { label: "Reuses", value: "Unlimited" },
   { label: "Mounting", value: "3M top tabs" },
   { label: "Residue", value: "None" },
-  { label: "Shade options", value: "5% – 50% VLT" },
+  { label: "Shade options", value: "5 / 20 / 30%" },
 ];
 
-const COMPARISON: {
-  feature: string;
-  peel: string;
-  legacy: string;
-  peelWins: boolean;
-}[] = [
-  { feature: "Removable on demand", peel: "Yes", legacy: "No", peelWins: true },
-  { feature: "Leaves residue", peel: "Never", legacy: "Often", peelWins: true },
-  {
-    feature: "Professional install",
-    peel: "Not needed",
-    legacy: "Required",
-    peelWins: true,
-  },
-  {
-    feature: "Move between cars",
-    peel: "Yes",
-    legacy: "No",
-    peelWins: true,
-  },
-  {
-    feature: "Adjust for the law",
-    peel: "Instantly",
-    legacy: "Re-strip it",
-    peelWins: true,
-  },
-  {
-    feature: "Bubbling over time",
-    peel: "No",
-    legacy: "Common",
-    peelWins: true,
-  },
+// Every feature is phrased as a positive capability, so a tick (✓) in the
+// Fantintstic column and a cross (✗) in the Bonded column read consistently.
+const COMPARISON: { feature: string }[] = [
+  { feature: "Removable & reusable" },
+  { feature: "Residue-free" },
+  { feature: "No installer needed" },
+  { feature: "Move between cars" },
+  { feature: "Adjust for the law" },
+  { feature: "Stays bubble-free" },
 ];
 
 export default function Specs() {
@@ -107,11 +84,39 @@ export default function Specs() {
                   <div className="p-5 text-sm font-medium leading-tight text-paper">
                     {row.feature}
                   </div>
-                  <div className="flex items-center justify-center bg-paper/95 p-5 text-center text-sm font-black text-ink">
-                    {row.peel}
+                  <div className="flex items-center justify-center bg-paper/95 p-5 text-ink">
+                    {/* Tick = Fantintstic has this capability */}
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      role="img"
+                      aria-label="Yes"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
                   </div>
-                  <div className="flex items-center justify-center p-5 text-center text-sm text-ash line-through decoration-graphite">
-                    {row.legacy}
+                  <div className="flex items-center justify-center p-5 text-ash">
+                    {/* Cross = traditional bonded tint does not */}
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      role="img"
+                      aria-label="No"
+                    >
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
                   </div>
                 </div>
               ))}
