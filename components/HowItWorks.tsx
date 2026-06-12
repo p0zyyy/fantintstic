@@ -9,7 +9,7 @@ const STEPS = [
   {
     n: "01",
     title: "Align",
-    body: "Hold the pre-cut panel to your window. Custom-shaped for your exact make and model, it lines up on its own.",
+    body: "Slide the pre-cut panel in at a 45° angle, set it perfectly fitted against your window.",
   },
   {
     n: "02",
@@ -51,7 +51,7 @@ export default function HowItWorks() {
           <h2 className="display text-[14vw] leading-[0.85] tracking-crush lg:text-[7vw]">
             <MaskedText text="Three" as="span" />
             <br />
-            <MaskedText text="moves." as="span" className="text-ash" />
+            <MaskedText text="steps." as="span" className="text-ash" />
           </h2>
           <p className="mt-8 max-w-sm text-lg text-mist">
             No installers. No heat guns. No appointments. The whole system is

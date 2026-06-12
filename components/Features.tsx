@@ -14,8 +14,7 @@ type Feature = {
   title: string;
   body: string;
   icon: ReactNode;
-  /** Tailwind grid span classes for the asymmetric layout. */
-  span: string;
+  /** Inverted (white-on-black) tile for visual rhythm. */
   invert?: boolean;
 };
 
@@ -46,7 +45,6 @@ const FEATURES: Feature[] = [
         <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" />
       </>
     ),
-    span: "md:col-span-2 md:row-span-2",
     invert: true,
   },
   {
@@ -59,18 +57,6 @@ const FEATURES: Feature[] = [
         <path d="M3 3l18 18" />
       </>
     ),
-    span: "md:col-span-2",
-  },
-  {
-    title: "Glare control",
-    body: "Cut harsh sun and headlight dazzle for a calmer, safer drive.",
-    icon: icon(
-      <>
-        <circle cx="12" cy="12" r="5" />
-        <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2" />
-      </>
-    ),
-    span: "md:col-span-2",
   },
   {
     title: "Legal flexibility",
@@ -80,17 +66,16 @@ const FEATURES: Feature[] = [
         <path d="M12 3v18M5 7h14M7 7l-3 7a4 4 0 0 0 6 0L7 7ZM17 7l-3 7a4 4 0 0 0 6 0l-3-7Z" />
       </>
     ),
-    span: "md:col-span-2",
+    invert: true,
   },
   {
     title: "100% reusable",
-    body: "Move it between cars, store it for winter, reapply for years. One purchase, endless use.",
+    body: "Remove whenever, store it if you want, reapply for years. One purchase, endless use.",
     icon: icon(
       <>
         <path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5" />
       </>
     ),
-    span: "md:col-span-2",
   },
   {
     title: "Residue-free",
@@ -100,19 +85,17 @@ const FEATURES: Feature[] = [
         <path d="M20 6 9 17l-5-5" />
       </>
     ),
-    span: "md:col-span-2",
     invert: true,
   },
   {
-    title: "Folds away flat",
-    body: "Slips into the included sleeve and tucks behind a seat. Storage solved.",
+    title: "Roll it up",
+    body: "Simply roll the tint up and store it somewhere if needed. It doesn't damage the tint.",
     icon: icon(
       <>
         <rect x="3" y="3" width="18" height="18" rx="2" />
         <path d="M3 9h18M9 21V9" />
       </>
     ),
-    span: "md:col-span-2",
   },
 ];
 
@@ -130,20 +113,20 @@ export default function Features() {
           <Reveal variant="rise" className="max-w-sm text-lg text-mist">
             <p>
               All the protection of premium tint, minus the permanence, the
-              installer fees, and the regret. Seven reasons it lives in your
+              installer fees, and the regret. Six reasons it lives in your
               car.
             </p>
           </Reveal>
         </div>
 
-        {/* Bento grid: 6 columns on desktop, tiles span asymmetrically. */}
-        <div className="grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-3 md:grid-cols-6">
+        {/* Uniform grid: 6 equal panels — 2 rows of 3 on desktop. */}
+        <div className="grid auto-rows-[minmax(220px,auto)] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
             <Reveal
               key={f.title}
               variant="rise"
               delay={(i % 3) * 0.08}
-              className={f.span}
+              className="h-full"
             >
               <article
                 data-cursor=""

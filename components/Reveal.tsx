@@ -110,23 +110,42 @@ export function MaskedText({
   const inView = useInView(ref, { once: true, amount: 0.4 });
 
   if (prefersReducedMotion) {
-    return <Tag className={className}>{text}</Tag>;
+    return (
+      <Tag className={`${className} whitespace-nowrap`.trim()}>{text}</Tag>
+    );
   }
 
   const words = text.split(" ");
 
   return (
-    <Tag ref={ref} className={className} aria-label={text}>
+    // whitespace-nowrap keeps a MaskedText group on one line: the per-word
+    // clip padding nudges widths just enough to tip a near-full line (e.g. the
+    // hero's "your terms.") into an unwanted wrap. Line breaks come only from
+    // the explicit <br> between groups.
+    <Tag
+      ref={ref}
+      className={`${className} whitespace-nowrap`.trim()}
+      aria-label={text}
+    >
       {words.map((word, i) => (
+        // The overflow-hidden mask must clear the full glyph extents (the dot
+        // of "i", ascenders, descenders like g/y/p, and the trailing period),
+        // which spill outside the tight 0.85 line box. We pad the mask on
+        // every side to give that clip room, then pull it back with equal
+        // negative margins so the heading's line spacing is unchanged.
+        // mr is trimmed to keep the inter-word gap (the new horizontal padding
+        // adds back the visual space).
         <span
           key={`${word}-${i}`}
-          className="reveal-mask mr-[0.25em] inline-block align-bottom"
+          className="reveal-mask inline-block align-bottom px-[0.1em] py-[0.28em] -ml-[0.1em] mr-[0.15em] -my-[0.28em]"
           aria-hidden="true"
         >
           <motion.span
             className="inline-block"
-            initial={{ y: "110%" }}
-            animate={inView ? { y: "0%" } : { y: "110%" }}
+            // Slide distance accounts for the bottom padding so the word still
+            // hides completely behind the (now taller) mask when collapsed.
+            initial={{ y: "150%" }}
+            animate={inView ? { y: "0%" } : { y: "150%" }}
             transition={{
               duration: 0.9,
               delay: delay + i * stagger,
