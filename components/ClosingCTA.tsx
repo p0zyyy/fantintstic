@@ -30,7 +30,7 @@ export default function ClosingCTA() {
           to bleed past the viewport edges — an intentional oversized motif. */}
       <motion.span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap text-[19vw] font-black leading-none tracking-crush text-mist"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap text-[15.2vw] font-black leading-none tracking-crush text-mist md:text-[19vw]"
         style={prefersReducedMotion ? undefined : { x: ghostX }}
       >
         Fantintstic
@@ -41,13 +41,13 @@ export default function ClosingCTA() {
           Ready when you are
         </p>
 
-        <h2 className="display text-[16vw] leading-[0.82] tracking-crush md:text-[12vw]">
+        <h2 className="display text-[50px] leading-[0.82] tracking-crush md:text-[12vw]">
           <MaskedText text="Stick on." as="span" />
           <br />
           <MaskedText text="Peel off." as="span" className="text-steel" />
         </h2>
 
-        <p className="mt-10 max-w-md text-lg text-graphite">
+        <p className="mt-10 max-w-md text-base md:text-lg text-graphite">
           Get the tint that answers to you, not the other way around. Free
           shipping, 30-day peel-it-and-see guarantee.
         </p>

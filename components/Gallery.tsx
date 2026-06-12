@@ -46,7 +46,7 @@ export default function Gallery() {
     <section className="bg-ink px-[5vw] py-[12vh]">
       <div className="mx-auto max-w-[1600px]">
         <div className="mb-12 flex items-end justify-between">
-          <h2 className="display text-[12vw] leading-[0.85] tracking-crush lg:text-[7vw]">
+          <h2 className="display text-[50px] leading-[0.85] tracking-crush md:text-[12vw] lg:text-[7vw]">
             <MaskedText text="On the" as="span" />
             <br />
             <MaskedText text="road." as="span" className="text-ash" />
@@ -111,7 +111,7 @@ function GalleryItem({
 
       <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-30" />
 
-      <span className="absolute bottom-6 left-6 text-2xl font-black tracking-tightest text-paper md:text-3xl">
+      <span className="absolute bottom-6 left-6 text-xl font-black tracking-tightest text-paper md:text-3xl">
         {shot.caption}
       </span>
     </motion.div>

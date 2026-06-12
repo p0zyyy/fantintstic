@@ -66,7 +66,7 @@ export default function Preloader() {
         >
           {/* Counter */}
           <motion.span
-            className="display text-[18vw] leading-none text-paper md:text-[12vw]"
+            className="display text-[14.4vw] leading-none text-paper md:text-[12vw]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
@@ -82,7 +82,7 @@ export default function Preloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Wordmark className="text-2xl font-black tracking-crush" />
+            <Wordmark className="text-xl font-black tracking-crush md:text-2xl" />
             <span className="text-xs uppercase tracking-[0.3em] text-ash">
               Tint on your terms
             </span>

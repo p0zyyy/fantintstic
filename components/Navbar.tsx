@@ -57,7 +57,7 @@ export default function Navbar() {
         <button
           onClick={() => scrollTo("#hero")}
           data-cursor=""
-          className="text-xl font-black tracking-crush md:text-2xl"
+          className="text-lg font-black tracking-crush md:text-2xl"
           aria-label="Fantintstic, back to top"
         >
           <Wordmark />
@@ -130,7 +130,7 @@ export default function Navbar() {
             <li key={link.href}>
               <button
                 onClick={() => scrollTo(link.href)}
-                className="w-full py-3 text-left text-3xl font-bold tracking-tightest"
+                className="w-full py-3 text-left text-2xl font-bold tracking-tightest md:text-3xl"
               >
                 {link.label}
               </button>

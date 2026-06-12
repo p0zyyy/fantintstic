@@ -46,7 +46,7 @@ export default function Testimonials() {
                   i % 2 === 1 ? "ml-auto text-right" : ""
                 }`}
               >
-                <blockquote className="text-3xl font-bold leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
+                <blockquote className="text-2xl font-bold leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
                   <span className="text-ash">“</span>
                   {q.quote}
                   <span className="text-ash">”</span>

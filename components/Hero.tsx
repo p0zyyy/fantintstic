@@ -78,7 +78,7 @@ export default function Hero() {
           Reusable · Removable · Residue-free
         </motion.p>
 
-        <h1 className="display text-[15vw] leading-[0.82] tracking-crush md:text-[12vw]">
+        <h1 className="display text-[50px] leading-[0.82] tracking-crush md:text-[12vw]">
           <MaskedText text="Tint on" delay={1.9} as="span" />
           <br />
           <MaskedText
@@ -94,7 +94,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.5 }}
-            className="max-w-md text-lg font-normal leading-relaxed text-mist md:text-xl"
+            className="max-w-md text-base font-normal leading-relaxed text-mist md:text-xl"
           >
             Premium nano-ceramic tint that blocks 99% of UV and up to 98% of
             infrared heat, yet peels off effortlessly clean whenever you

@@ -45,15 +45,15 @@ export default function HowItWorks() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-0 lg:grid-cols-2">
         {/* Sticky left column */}
         <div className="top-0 flex h-[60vh] flex-col justify-center px-[5vw] py-16 lg:sticky lg:h-screen">
-          <span className="mb-6 text-[1.3125rem] font-medium uppercase tracking-[0.3em] text-ash">
+          <span className="mb-6 text-sm font-medium uppercase tracking-[0.3em] text-ash">
             (How it works)
           </span>
-          <h2 className="display text-[14vw] leading-[0.85] tracking-crush lg:text-[7vw]">
+          <h2 className="display text-[50px] leading-[0.85] tracking-crush md:text-[14vw] lg:text-[7vw]">
             <MaskedText text="Three" as="span" />
             <br />
             <MaskedText text="steps." as="span" className="text-ash" />
           </h2>
-          <p className="mt-8 max-w-sm text-lg text-mist">
+          <p className="mt-8 max-w-sm text-base md:text-lg text-mist">
             No installers. No heat guns. No appointments. The whole system is
             built to go on and come off by you, right in your driveway.
           </p>
@@ -118,13 +118,13 @@ function Step({
       className="pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
-      <span className="block text-[18vw] font-black leading-none tracking-crush text-steel lg:text-[10vw]">
+      <span className="block text-[14.4vw] font-black leading-none tracking-crush text-steel md:text-[18vw] lg:text-[10vw]">
         {step.n}
       </span>
-      <h3 className="mt-2 text-5xl font-black tracking-tightest lg:text-7xl">
+      <h3 className="mt-2 text-4xl font-black tracking-tightest md:text-5xl lg:text-7xl">
         {step.title}
       </h3>
-      <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
+      <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-mist">
         {step.body}
       </p>
     </motion.div>

@@ -36,7 +36,7 @@ export default function Specs() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 lg:grid-cols-2">
         {/* Left — specs */}
         <div>
-          <h2 className="display mb-12 text-[12vw] leading-[0.85] tracking-crush lg:text-[6vw]">
+          <h2 className="display mb-12 text-[50px] leading-[0.85] tracking-crush md:text-[12vw] lg:text-[6vw]">
             <MaskedText text="The" as="span" />
             <br />
             <MaskedText text="numbers." as="span" className="text-ash" />
@@ -49,7 +49,7 @@ export default function Specs() {
                   <dt className="text-base uppercase tracking-wider text-ash">
                     {spec.label}
                   </dt>
-                  <dd className="text-2xl font-black tracking-tightest md:text-3xl">
+                  <dd className="text-xl font-black tracking-tightest md:text-3xl">
                     {spec.value}
                   </dd>
                 </div>

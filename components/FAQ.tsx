@@ -47,7 +47,7 @@ export default function FAQ() {
     <section id="faq" className="bg-ink px-[5vw] py-[14vh]">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <h2 className="display sticky top-32 text-[12vw] leading-[0.85] tracking-crush lg:text-[6vw]">
+          <h2 className="display sticky top-32 text-[50px] leading-[0.85] tracking-crush md:text-[12vw] lg:text-[6vw]">
             <MaskedText text="You" as="span" />
             <br />
             <MaskedText text="asked." as="span" className="text-ash" />
@@ -68,7 +68,7 @@ export default function FAQ() {
                     data-cursor=""
                     className="flex w-full items-center justify-between gap-6 py-8 text-left"
                   >
-                    <span className="text-2xl font-bold tracking-tight md:text-3xl">
+                    <span className="text-xl font-bold tracking-tight md:text-3xl">
                       {item.q}
                     </span>
                     {/* Plus / minus morph */}
@@ -94,7 +94,7 @@ export default function FAQ() {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="max-w-2xl pb-8 text-lg leading-relaxed text-mist">
+                      <p className="max-w-2xl pb-8 text-base md:text-lg leading-relaxed text-mist">
                         {item.a}
                       </p>
                     </motion.div>
