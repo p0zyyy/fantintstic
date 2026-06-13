@@ -8,12 +8,15 @@ import Wordmark from "./Wordmark";
  * of the brand name sits at the very bottom as a signature flourish.
  */
 const COLUMNS: { heading: string; links: string[] }[] = [
-  { heading: "Product", links: ["Shop", "Shades", "Find your fit", "Gift cards"] },
-  { heading: "Support", links: ["How it works", "FAQ", "Warranty", "Contact"] },
-  { heading: "Company", links: ["About", "Press", "Sustainability", "Careers"] },
+  { heading: "Product", links: ["Shop"] },
+  { heading: "Company", links: ["About"] },
+  { heading: "Support", links: ["Warranty", "Contact"] },
 ];
 
-const SOCIALS = ["Instagram", "TikTok", "YouTube", "X"];
+const SOCIALS: { name: string; href: string }[] = [
+  { name: "Instagram", href: "https://www.instagram.com/fantintstic?utm_source=qr" },
+  { name: "TikTok", href: "https://www.tiktok.com/@fantintstic?_r=1" },
+];
 
 export default function Footer() {
   return (
@@ -30,13 +33,15 @@ export default function Footer() {
             {/* Socials */}
             <ul className="mt-8 flex flex-wrap gap-3">
               {SOCIALS.map((s) => (
-                <li key={s}>
+                <li key={s.name}>
                   <a
-                    href="#"
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-cursor=""
                     className="inline-block rounded-full border border-graphite px-4 py-2 text-xs uppercase tracking-wider text-mist transition-colors hover:border-paper hover:text-paper"
                   >
-                    {s}
+                    {s.name}
                   </a>
                 </li>
               ))}

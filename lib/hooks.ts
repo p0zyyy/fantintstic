@@ -23,6 +23,26 @@ export function usePrefersReducedMotion(): boolean {
 }
 
 /**
+ * Reactively tracks an arbitrary media query, e.g. "(max-width: 499px)".
+ * SSR-safe: starts `false` on the server / first render, then syncs on mount.
+ * Returns `true` while the query matches.
+ */
+export function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    setMatches(mql.matches);
+
+    const onChange = (e: MediaQueryListEvent) => setMatches(e.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [query]);
+
+  return matches;
+}
+
+/**
  * Detects touch / coarse-pointer devices. We use this to disable the custom
  * cursor and the magnetic-button effect, which only make sense with a mouse.
  * Returns `true` on touch devices.

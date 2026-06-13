@@ -38,7 +38,7 @@ const config: Config = {
         sm: ["clamp(0.78rem, 0.75rem + 0.16vw, 0.875rem)", { lineHeight: "1.45" }],
         base: ["clamp(0.875rem, 0.833rem + 0.21vw, 1rem)", { lineHeight: "1.55" }],
         lg: ["clamp(0.938rem, 0.875rem + 0.31vw, 1.125rem)", { lineHeight: "1.6" }],
-        xl: ["clamp(1.031rem, 0.958rem + 0.36vw, 1.25rem)", { lineHeight: "1.5" }],
+        xl: ["clamp(0.938rem, 0.833rem + 0.52vw, 1.25rem)", { lineHeight: "1.5" }],
         "2xl": ["clamp(1.188rem, 1.083rem + 0.52vw, 1.5rem)", { lineHeight: "1.3" }],
         "3xl": ["clamp(1.125rem, 1rem + 0.625vw, 1.5rem)", { lineHeight: "1.2" }],
         "4xl": ["clamp(1.75rem, 1.583rem + 0.83vw, 2.25rem)", { lineHeight: "1.1" }],
