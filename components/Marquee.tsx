@@ -75,11 +75,11 @@ export default function Marquee({
     <>
       {items.map((item, i) => (
         <Fragment key={i}>
-          <span className="px-8 text-[6.4vw] font-black uppercase leading-none tracking-tightest md:text-[5vw]">
+          <span className="px-8 text-[clamp(1.75rem,6vw,4rem)] font-black uppercase leading-none tracking-tightest">
             {item}
           </span>
           <span
-            className="px-2 text-[4vw] leading-none text-ash md:text-[3vw]"
+            className="px-2 text-[clamp(0.85rem,4vw,2.25rem)] leading-none text-ash"
             aria-hidden="true"
           >
             {separator}

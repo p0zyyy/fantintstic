@@ -48,12 +48,12 @@ export default function HowItWorks() {
           <span className="mb-6 text-sm font-medium uppercase tracking-[0.3em] text-ash">
             (How it works)
           </span>
-          <h2 className="display text-[50px] leading-[0.85] tracking-crush md:text-[14vw] lg:text-[7vw]">
+          <h2 className="display text-display leading-[0.85] tracking-crush">
             <MaskedText text="Three" as="span" />
             <br />
             <MaskedText text="steps." as="span" className="text-ash" />
           </h2>
-          <p className="mt-8 max-w-sm text-base md:text-lg text-mist">
+          <p className="mt-8 max-w-sm text-lg text-mist">
             No installers. No heat guns. No appointments. The whole system is
             built to go on and come off by you, right in your driveway.
           </p>
@@ -118,13 +118,13 @@ function Step({
       className="pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
-      <span className="block text-[14.4vw] font-black leading-none tracking-crush text-steel md:text-[18vw] lg:text-[10vw]">
+      <span className="block text-[clamp(2.875rem,10vw,9rem)] font-black leading-none tracking-crush text-steel">
         {step.n}
       </span>
-      <h3 className="mt-2 text-4xl font-black tracking-tightest md:text-5xl lg:text-7xl">
+      <h3 className="mt-2 text-7xl font-black tracking-tightest">
         {step.title}
       </h3>
-      <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-mist">
+      <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
         {step.body}
       </p>
     </motion.div>

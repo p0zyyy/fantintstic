@@ -105,12 +105,12 @@ export default function Features() {
       <div className="mx-auto max-w-[1600px]">
         {/* Heading */}
         <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-          <h2 className="display text-[50px] leading-[0.85] tracking-crush md:text-[12vw] lg:text-[7vw]">
+          <h2 className="display text-display leading-[0.85] tracking-crush">
             <MaskedText text="Every" as="span" />
             <br />
             <MaskedText text="upside." as="span" className="text-ash" />
           </h2>
-          <Reveal variant="rise" className="max-w-sm text-base md:text-lg text-mist">
+          <Reveal variant="rise" className="max-w-sm text-lg text-mist">
             <p>
               All the protection of premium tint, minus the permanence, the
               installer fees, and the regret. Six reasons it lives in your
@@ -140,7 +140,7 @@ export default function Features() {
                   {f.icon}
                 </div>
                 <div className="mt-12">
-                  <h3 className="text-xl font-black tracking-tightest md:text-3xl">
+                  <h3 className="text-3xl font-black tracking-tightest">
                     {f.title}
                   </h3>
                   <p

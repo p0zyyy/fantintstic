@@ -36,7 +36,7 @@ export default function Specs() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 lg:grid-cols-2">
         {/* Left — specs */}
         <div>
-          <h2 className="display mb-12 text-[50px] leading-[0.85] tracking-crush md:text-[12vw] lg:text-[6vw]">
+          <h2 className="display mb-12 text-display leading-[0.85] tracking-crush">
             <MaskedText text="The" as="span" />
             <br />
             <MaskedText text="numbers." as="span" className="text-ash" />
@@ -49,7 +49,7 @@ export default function Specs() {
                   <dt className="text-base uppercase tracking-wider text-ash">
                     {spec.label}
                   </dt>
-                  <dd className="text-xl font-black tracking-tightest md:text-3xl">
+                  <dd className="text-3xl font-black tracking-tightest">
                     {spec.value}
                   </dd>
                 </div>
@@ -63,14 +63,14 @@ export default function Specs() {
           <Reveal variant="rise">
             <div className="overflow-hidden rounded-2xl border border-graphite">
               {/* Header row */}
-              <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-coal">
-                <div className="p-5 text-xs uppercase tracking-widest text-ash">
+              <div className="grid grid-cols-[minmax(0,1fr)_3.5rem_3.5rem] bg-coal md:grid-cols-[1.4fr_1fr_1fr]">
+                <div className="px-4 py-4 text-xs uppercase tracking-widest text-ash md:p-5">
                   vs. Traditional
                 </div>
-                <div className="bg-paper p-5 text-center text-sm font-black uppercase tracking-tight text-ink">
+                <div className="bg-paper px-0.5 py-4 text-center text-[8px] font-black uppercase leading-none tracking-tighter text-ink md:p-5 md:text-sm md:tracking-tight">
                   Fantintstic
                 </div>
-                <div className="p-5 text-center text-sm font-bold uppercase tracking-wider text-ash">
+                <div className="px-0.5 py-4 text-center text-[8px] font-bold uppercase leading-none tracking-tight text-ash md:p-5 md:text-sm md:tracking-wider">
                   Bonded
                 </div>
               </div>
@@ -79,12 +79,12 @@ export default function Specs() {
               {COMPARISON.map((row) => (
                 <div
                   key={row.feature}
-                  className="grid grid-cols-[1.4fr_1fr_1fr] border-t border-graphite"
+                  className="grid grid-cols-[minmax(0,1fr)_3.5rem_3.5rem] border-t border-graphite md:grid-cols-[1.4fr_1fr_1fr]"
                 >
-                  <div className="p-5 text-sm font-medium leading-tight text-paper">
+                  <div className="px-4 py-4 text-sm font-medium leading-tight text-paper md:p-5">
                     {row.feature}
                   </div>
-                  <div className="flex items-center justify-center bg-paper/95 p-5 text-ink">
+                  <div className="flex items-center justify-center bg-paper/95 px-1 py-4 text-ink md:p-5">
                     {/* Tick = Fantintstic has this capability */}
                     <svg
                       width="22"
@@ -101,7 +101,7 @@ export default function Specs() {
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
                   </div>
-                  <div className="flex items-center justify-center p-5 text-ash">
+                  <div className="flex items-center justify-center px-1 py-4 text-ash md:p-5">
                     {/* Cross = traditional bonded tint does not */}
                     <svg
                       width="20"

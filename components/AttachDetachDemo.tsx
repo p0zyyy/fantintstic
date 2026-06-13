@@ -93,12 +93,12 @@ export default function AttachDetachDemo() {
       <div className="mx-auto max-w-[1600px]">
         {/* Heading */}
         <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <h2 className="display text-[50px] leading-[0.85] tracking-crush md:text-[7vw]">
+          <h2 className="display text-display leading-[0.85] tracking-crush">
             <MaskedText text="Drag to" as="span" />
             <br />
             <MaskedText text="decide." as="span" className="text-ash" />
           </h2>
-          <p className="max-w-sm text-base md:text-lg text-mist">
+          <p className="max-w-sm text-lg text-mist">
             One panel. Two realities. Pull the handle to bring the tint on,
             then push it back to peel it clean off. That control is yours,
             every single day.

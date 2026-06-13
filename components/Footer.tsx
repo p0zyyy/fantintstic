@@ -22,7 +22,7 @@ export default function Footer() {
         {/* Top: wordmark + tagline / link columns */}
         <div className="grid grid-cols-1 gap-12 border-b border-graphite pb-16 lg:grid-cols-[1.5fr_2fr]">
           <div>
-            <Wordmark className="text-3xl font-black tracking-crush md:text-5xl" />
+            <Wordmark className="text-5xl font-black tracking-crush" />
             <p className="mt-4 max-w-xs text-mist">
               Reusable, removable car window tint. Tint on your terms.
             </p>
