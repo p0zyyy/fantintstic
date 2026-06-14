@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ReactNode, RefObject, useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { usePrefersReducedMotion } from "@/lib/hooks";
 
@@ -123,7 +123,9 @@ export function MaskedText({
     // hero's "your terms.") into an unwanted wrap. Line breaks come only from
     // the explicit <br> between groups.
     <Tag
-      ref={ref}
+      // `as` may be span/p/div, so the JSX ref wants a specific element type;
+      // the live node is always an HTMLElement, so this cast is safe.
+      ref={ref as RefObject<HTMLDivElement>}
       className={`${className} whitespace-nowrap`.trim()}
       aria-label={text}
     >
