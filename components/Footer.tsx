@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Marquee from "./Marquee";
 import Wordmark from "./Wordmark";
 
@@ -77,18 +78,22 @@ export default function Footer() {
         {/* Fine print */}
         <div className="flex flex-col items-start justify-between gap-4 py-8 text-xs uppercase tracking-wider text-ash md:flex-row md:items-center">
           <span>
-            © {new Date().getFullYear()} Fantintstic Inc. All rights reserved.
+            © {new Date().getFullYear()} Fantintstic. All rights reserved.
           </span>
           <div className="flex gap-6">
-            <a href="#" data-cursor="" className="hover:text-paper">
+            <Link href="/privacy" data-cursor="" className="hover:text-paper">
               Privacy
-            </a>
-            <a href="#" data-cursor="" className="hover:text-paper">
+            </Link>
+            <Link href="/terms" data-cursor="" className="hover:text-paper">
               Terms
-            </a>
-            <a href="#" data-cursor="" className="hover:text-paper">
+            </Link>
+            <Link
+              href="/tint-law-guide"
+              data-cursor=""
+              className="hover:text-paper"
+            >
               Tint law guide
-            </a>
+            </Link>
           </div>
           {/* TODO: wire up real legal pages + region-specific tint-law guide. */}
         </div>
