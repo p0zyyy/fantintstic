@@ -1,0 +1,33 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fantintstic">
+  <!--
+    Fantintstic favicon. A monochrome "tint chip": the square splits into a
+    clear (white) half and a tinted (black) half — the detachable-tint idea —
+    with a bold F that inverts across the divide (dark on clear, light on
+    tinted). Strictly black/white so it reads on any browser tab.
+  -->
+  <defs>
+    <clipPath id="rounded"><rect width="100" height="100" rx="22" /></clipPath>
+    <clipPath id="leftHalf"><rect x="0" y="0" width="50" height="100" /></clipPath>
+    <clipPath id="rightHalf"><rect x="50" y="0" width="50" height="100" /></clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Clear half / tinted half -->
+    <rect x="0" y="0" width="50" height="100" fill="#ffffff" />
+    <rect x="50" y="0" width="50" height="100" fill="#000000" />
+
+    <!-- F: dark on the clear (left) half -->
+    <g fill="#000000" clip-path="url(#leftHalf)">
+      <rect x="34" y="26" width="15" height="50" />
+      <rect x="34" y="26" width="36" height="14" />
+      <rect x="34" y="45" width="28" height="12" />
+    </g>
+
+    <!-- F: light on the tinted (right) half -->
+    <g fill="#ffffff" clip-path="url(#rightHalf)">
+      <rect x="34" y="26" width="15" height="50" />
+      <rect x="34" y="26" width="36" height="14" />
+      <rect x="34" y="45" width="28" height="12" />
+    </g>
+  </g>
+</svg>
