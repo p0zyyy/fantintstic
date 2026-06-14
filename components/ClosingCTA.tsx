@@ -1,10 +1,9 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
 import MagneticButton from "./MagneticButton";
 import { MaskedText } from "./Reveal";
-import { usePrefersReducedMotion, useMediaQuery } from "@/lib/hooks";
+import { usePrefersReducedMotion } from "@/lib/hooks";
 
 /**
  * Big closing CTA — enormous type that fills the viewport, a single magnetic
@@ -12,17 +11,39 @@ import { usePrefersReducedMotion, useMediaQuery } from "@/lib/hooks";
  */
 export default function ClosingCTA() {
   const ref = useRef<HTMLElement>(null);
+  const ghostRef = useRef<HTMLSpanElement>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
-  // Below 500px the ghost word turns vertical, so its parallax drift runs along
-  // the Y axis (down the section) instead of the X axis.
-  const isNarrow = useMediaQuery("(max-width: 499px)");
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  // Same magnitude either way; the axis is chosen at render time below.
-  const ghostDrift = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  // Parallax for the ghost word. Framer-motion's useScroll doesn't track
+  // Lenis's smooth scroll here (it sits frozen), so we measure the section's
+  // real position every frame and write the transform straight to the node.
+  // Drift is ±20% of the word's own box and follows its orientation: vertical
+  // (Y) below 500px where the word is rotated, horizontal (X) above it.
+  useEffect(() => {
+    const section = ref.current;
+    const ghost = ghostRef.current;
+    if (!section || !ghost) return;
+    if (prefersReducedMotion) {
+      ghost.style.transform = "";
+      return;
+    }
+
+    let raf = 0;
+    const update = () => {
+      const r = section.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      // 0 as the section enters from the bottom, 1 as it leaves past the top.
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+      const norm = (p - 0.5) * 0.4; // -0.2..0.2  → ±20%
+      ghost.style.transform =
+        window.innerWidth < 500
+          ? `translateY(${(norm * r.height).toFixed(1)}px)`
+          : `translateX(${(norm * r.width).toFixed(1)}px)`;
+      raf = requestAnimationFrame(update);
+    };
+    raf = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(raf);
+  }, [prefersReducedMotion]);
 
   return (
     <section
@@ -34,19 +55,13 @@ export default function ClosingCTA() {
           to bleed past the viewport edges — an intentional oversized motif.
           Below 500px the word flips to vertical writing and is sized in vh so
           it grows to span the section's height, drifting top-to-bottom. */}
-      <motion.span
+      <span
+        ref={ghostRef}
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap text-[clamp(4rem,17vw,15rem)] font-black leading-none tracking-crush text-mist max-[499px]:[writing-mode:vertical-rl] max-[499px]:text-[15.2vh]"
-        style={
-          prefersReducedMotion
-            ? undefined
-            : isNarrow
-              ? { y: ghostDrift }
-              : { x: ghostDrift }
-        }
       >
         Fantintstic
-      </motion.span>
+      </span>
 
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="mb-8 text-sm font-medium uppercase tracking-[0.3em] text-steel">
