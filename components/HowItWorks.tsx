@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { MaskedText } from "./Reveal";
 import { usePrefersReducedMotion } from "@/lib/hooks";
 
@@ -76,15 +76,8 @@ export default function HowItWorks() {
             />
           </div>
 
-          {STEPS.map((step, i) => (
-            <Step
-              key={step.n}
-              step={step}
-              index={i}
-              total={STEPS.length}
-              progress={scrollYProgress}
-              reduced={prefersReducedMotion}
-            />
+          {STEPS.map((step) => (
+            <Step key={step.n} step={step} reduced={prefersReducedMotion} />
           ))}
         </div>
       </div>
@@ -94,27 +87,29 @@ export default function HowItWorks() {
 
 function Step({
   step,
-  index,
-  total,
-  progress,
   reduced,
 }: {
   step: (typeof STEPS)[number];
-  index: number;
-  total: number;
-  progress: MotionValue<number>;
   reduced: boolean;
 }) {
-  // Each step "lights up" as the scroll progress passes its band.
-  const band = index / total;
+  // Each step "lights up" based on its OWN position in the viewport, so every
+  // step — including the last — brightens as it crosses the centre and dims as
+  // it enters/leaves. (Deriving this from the whole section's progress left the
+  // final step's dim-out range beyond the reachable 0–1 band.)
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
   const opacity = useTransform(
-    progress,
-    [band - 0.15, band + 0.05, band + 0.4, band + 0.55],
+    scrollYProgress,
+    [0, 0.4, 0.6, 1],
     [0.25, 1, 1, 0.25]
   );
 
   return (
     <motion.div
+      ref={ref}
       className="pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
