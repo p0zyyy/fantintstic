@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import MagneticButton from "./MagneticButton";
 import { MaskedText } from "./Reveal";
 import { usePrefersReducedMotion } from "@/lib/hooks";
+import { WHATSAPP_CHAT_URL } from "@/lib/links";
 
 /**
  * Big closing CTA — enormous type that fills the viewport, a single magnetic
@@ -83,10 +84,11 @@ export default function ClosingCTA() {
 
         <div className="mt-12">
           <MagneticButton
-            href="#hero"
+            href={WHATSAPP_CHAT_URL}
+            target="_blank"
             cursorLabel="Buy"
             strength={0.6}
-            ariaLabel="Get your detachable tint"
+            ariaLabel="Chat with Fantintstic on WhatsApp"
             className="rounded-full bg-ink px-14 py-6 text-lg font-bold uppercase tracking-wider text-paper"
           >
             Get Yours →

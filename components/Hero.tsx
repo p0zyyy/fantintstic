@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MaskedText } from "./Reveal";
 import MagneticButton from "./MagneticButton";
 import { usePrefersReducedMotion } from "@/lib/hooks";
+import { WHATSAPP_CHAT_URL } from "@/lib/links";
 
 /**
  * Hero — oversized clamp-scaled headline ("TINT ON YOUR TERMS"), a one-line
@@ -107,11 +108,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.65 }}
           >
             <MagneticButton
-              onClick={() =>
-                window.dispatchEvent(
-                  new CustomEvent("lenis:scroll-to", { detail: "#cta" })
-                )
-              }
+              href={WHATSAPP_CHAT_URL}
+              target="_blank"
+              ariaLabel="Chat with Fantintstic on WhatsApp"
               cursorLabel="Buy"
               strength={0.5}
               className="rounded-full bg-paper px-10 py-5 text-base font-bold uppercase tracking-wider text-ink"

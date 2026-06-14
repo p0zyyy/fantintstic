@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 import Wordmark from "./Wordmark";
+import { WHATSAPP_CHAT_URL } from "@/lib/links";
 
 const LINKS = [
   { label: "How it works", href: "#how" },
@@ -82,7 +83,9 @@ export default function Navbar() {
         {/* CTA + mobile toggle */}
         <div className="flex items-center gap-4">
           <MagneticButton
-            onClick={() => scrollTo("#cta")}
+            href={WHATSAPP_CHAT_URL}
+            target="_blank"
+            ariaLabel="Chat with Fantintstic on WhatsApp"
             cursorLabel="Buy"
             className="hidden rounded-full bg-paper px-6 py-3 text-sm font-bold uppercase tracking-wider text-ink transition-colors hover:bg-mist sm:inline-flex"
           >
@@ -137,12 +140,15 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-4">
-            <button
-              onClick={() => scrollTo("#cta")}
-              className="w-full rounded-full bg-paper py-4 text-center text-base font-bold uppercase tracking-wider text-ink"
+            <a
+              href={WHATSAPP_CHAT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="block w-full rounded-full bg-paper py-4 text-center text-base font-bold uppercase tracking-wider text-ink"
             >
               Get Yours
-            </button>
+            </a>
           </li>
         </ul>
       </motion.div>

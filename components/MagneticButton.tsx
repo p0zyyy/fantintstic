@@ -8,6 +8,10 @@ interface MagneticButtonProps {
   children: ReactNode;
   /** Render as a link instead of a button when href is provided. */
   href?: string;
+  /** Link target (e.g. "_blank" for external links). Only used with href. */
+  target?: string;
+  /** Link rel; defaults to a safe value when target is "_blank". */
+  rel?: string;
   onClick?: () => void;
   className?: string;
   /** How strongly the button follows the cursor (0–1). */
@@ -25,6 +29,8 @@ interface MagneticButtonProps {
 export default function MagneticButton({
   children,
   href,
+  target,
+  rel,
   onClick,
   className = "",
   strength = 0.4,
@@ -76,6 +82,8 @@ export default function MagneticButton({
       <motion.a
         ref={ref}
         href={href}
+        target={target}
+        rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
         aria-label={ariaLabel}
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
