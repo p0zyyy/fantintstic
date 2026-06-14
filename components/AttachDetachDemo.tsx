@@ -140,11 +140,11 @@ export default function AttachDetachDemo() {
               alt="The same car with detachable tint on, cutting glare and heat"
               fill
               sizes="(max-width: 768px) 100vw, 90vw"
-              className="object-cover grayscale brightness-[0.28] contrast-125"
+              className="object-cover grayscale brightness-[0.5] contrast-125"
               draggable={false}
             />
             {/* extra scrim sells the privacy/darkness of the tint */}
-            <div className="absolute inset-0 bg-ink/40" />
+            <div className="absolute inset-0 bg-ink/[0.15]" />
             <span className="absolute bottom-5 left-5 rounded-full border border-ink/10 bg-paper px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-ink backdrop-blur-sm">
               Tint on
             </span>
