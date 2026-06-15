@@ -97,7 +97,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 2.5 }}
             className="max-w-md text-xl font-normal leading-relaxed text-mist"
           >
-            Premium nano-ceramic tint that blocks 99% of UV and up to 98% of
+            Premium nano-ceramic tint that blocks 99% of UV and up to 99% of
             infrared heat, yet peels off effortlessly clean whenever you
             choose.
           </motion.p>

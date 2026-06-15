@@ -110,7 +110,7 @@ function Step({
   return (
     <motion.div
       ref={ref}
-      className="pl-0 lg:pl-[8vw]"
+      className="relative pl-0 lg:pl-[8vw]"
       style={reduced ? undefined : { opacity }}
     >
       <span className="block text-[clamp(2.875rem,10vw,9rem)] font-black leading-none tracking-crush text-steel">
