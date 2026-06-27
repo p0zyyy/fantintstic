@@ -21,16 +21,23 @@ export interface LegalSection {
 
 interface LegalPageProps {
   title: string;
-  lastUpdated: string;
+  /** Optional revision date. Omit for evergreen pages like About. */
+  lastUpdated?: string;
+  /** Small overline above the title (e.g. "Legal", "Company", "Warranty"). */
+  eyebrow?: string;
   intro?: string[];
   sections: LegalSection[];
+  /** Prefix section headings with "1.", "2." … (defaults to true). */
+  numbered?: boolean;
 }
 
 export default function LegalPage({
   title,
   lastUpdated,
+  eyebrow = "Legal",
   intro = [],
   sections,
+  numbered = true,
 }: LegalPageProps) {
   return (
     <>
@@ -49,11 +56,15 @@ export default function LegalPage({
       </header>
 
       <main id="main" className="mx-auto max-w-[800px] px-[5vw] py-[12vh]">
-        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-ash">Legal</p>
+        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-ash">
+          {eyebrow}
+        </p>
         <h1 className="mb-5 text-5xl font-black leading-[0.95] tracking-crush">
           {title}
         </h1>
-        <p className="mb-12 text-sm text-ash">Last updated: {lastUpdated}</p>
+        {lastUpdated && (
+          <p className="mb-12 text-sm text-ash">Last updated: {lastUpdated}</p>
+        )}
 
         {intro.map((p, i) => (
           <p key={i} className="mb-5 leading-relaxed text-mist">
@@ -64,7 +75,7 @@ export default function LegalPage({
         {sections.map((section, i) => (
           <section key={i} className="mt-12">
             <h2 className="mb-4 text-2xl font-black tracking-tightest">
-              {`${i + 1}. ${section.heading}`}
+              {numbered ? `${i + 1}. ${section.heading}` : section.heading}
             </h2>
             {section.blocks.map((block, j) => {
               if (block.type === "h3") {

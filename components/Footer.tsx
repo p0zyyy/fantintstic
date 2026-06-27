@@ -3,15 +3,30 @@
 import Link from "next/link";
 import Marquee from "./Marquee";
 import Wordmark from "./Wordmark";
+import { WHATSAPP_CHAT_URL } from "@/lib/links";
 
 /**
  * Footer — wordmark, link columns, socials and fine print. A final marquee
  * of the brand name sits at the very bottom as a signature flourish.
+ *
+ * "Shop" and "Contact" open the shared WhatsApp chat (same line as every
+ * "Get Yours" CTA); the rest are internal routes.
  */
-const COLUMNS: { heading: string; links: string[] }[] = [
-  { heading: "Product", links: ["Shop"] },
-  { heading: "Company", links: ["About"] },
-  { heading: "Support", links: ["Warranty", "Contact"] },
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const COLUMNS: { heading: string; links: FooterLink[] }[] = [
+  {
+    heading: "Product",
+    links: [{ label: "Shop", href: WHATSAPP_CHAT_URL, external: true }],
+  },
+  { heading: "Company", links: [{ label: "About", href: "/about" }] },
+  {
+    heading: "Support",
+    links: [
+      { label: "Warranty", href: "/warranty" },
+      { label: "Contact", href: WHATSAPP_CHAT_URL, external: true },
+    ],
+  },
 ];
 
 const SOCIALS: { name: string; href: string }[] = [
@@ -57,18 +72,39 @@ export default function Footer() {
                   {col.heading}
                 </h3>
                 <ul className="flex flex-col gap-3">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        data-cursor=""
-                        className="group relative inline-block text-base text-mist transition-colors hover:text-paper"
-                      >
-                        {link}
+                  {col.links.map((link) => {
+                    const className =
+                      "group relative inline-block text-base text-mist transition-colors hover:text-paper";
+                    const inner = (
+                      <>
+                        {link.label}
                         <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-paper transition-all duration-300 group-hover:w-full" />
-                      </a>
-                    </li>
-                  ))}
+                      </>
+                    );
+                    return (
+                      <li key={link.label}>
+                        {link.external ? (
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-cursor=""
+                            className={className}
+                          >
+                            {inner}
+                          </a>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            data-cursor=""
+                            className={className}
+                          >
+                            {inner}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
             ))}

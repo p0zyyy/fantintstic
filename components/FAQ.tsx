@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "Is detachable tint legal?",
-    a: "That's the entire point. Laws vary by region and change often. Because Fantintstic comes off in seconds, you can run darker tint when it's allowed and peel down to legal, or fully clear, for inspections and checkpoints.",
+    a: "Fantintstic gives drivers the flexibility to adjust or remove the tint based on their needs while remaining responsible for complying with local VLT and road safety requirements.",
   },
   {
     q: "How long does it last?",
