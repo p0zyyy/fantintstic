@@ -12,7 +12,7 @@ import { MaskedText } from "./Reveal";
 const FAQS = [
   {
     q: "Does it really leave zero residue?",
-    a: "Yes. Each panel hangs from a few small 3M tabs along the very top of the window, using the same residue-free adhesive 3M makes for removable wall mounts. The tabs hold the tint in place, then lift away clean, and the film itself never bonds to the glass. Remove it after a day or a decade and the window is exactly as it was.",
+    a: "Yes. Each panel hangs from a few small 3M tabs along the very top of the window — the same residue-free adhesive 3M uses for removable wall hooks. The tabs hold the tint in place, then lift away clean, and the film itself never bonds to the glass. Remove it after a day or a decade and the window is exactly as it was.",
   },
   {
     q: "How does it stay on the window?",

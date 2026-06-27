@@ -7,7 +7,6 @@ import MarqueeStrip from "@/components/MarqueeStrip";
 import HowItWorks from "@/components/HowItWorks";
 import AttachDetachDemo from "@/components/AttachDetachDemo";
 import Features from "@/components/Features";
-import Gallery from "@/components/Gallery";
 import Specs from "@/components/Specs";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -41,7 +40,6 @@ export default function Home() {
           <HowItWorks />
           <AttachDetachDemo />
           <Features />
-          <Gallery />
           <Specs />
           <Testimonials />
           <FAQ />

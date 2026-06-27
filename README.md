@@ -44,7 +44,7 @@ npm run lint     # next lint
 ### Sections (one component each)
 
 `Navbar` → `Hero` → `MarqueeStrip` → `HowItWorks` → `AttachDetachDemo`
-→ `Features` → `Gallery` → `Specs` → `Testimonials` → `FAQ` → `ClosingCTA`
+→ `Features` → `Testimonials` → `Specs` → `FAQ` → `ClosingCTA`
 → `Footer`
 
 The **AttachDetachDemo** is the centerpiece: a draggable before/after slider
@@ -83,7 +83,8 @@ Search the repo for `TODO` to find every swap point:
   image with a brightness filter for the "tinted" layer; swap for a real
   clear vs. tinted pair if you have them). There's also a `TODO` to overlay a
   graphic of the 3M top tabs to make the holding mechanism explicit.
-- `components/Gallery.tsx` — lifestyle gallery shots
+- `components/Testimonials.tsx` — owner car photos in `public/testimonials/`
+  (one wide side-profile shot per owner; filenames match the `src` values)
 - `components/Specs.tsx` — replace representative figures with certified lab data
 - `app/layout.tsx` — set `metadataBase` to your production domain
 - `next.config.mjs` — replace the Unsplash `remotePatterns` host with your CDN
